@@ -1,5 +1,5 @@
 ﻿## Door-Restart-System v1.0.0
-![GitHub release (latest by date)](https://img.shields.io/github/downloads/gamekuchen/DoorRestartSystemPLA/v1.0.0/total?style=for-the-badge)
+![GitHub release (latest by date)]https://img.shields.io/github/downloads/gamekuchen/doorrestartsystempla/latest/total?style=for-the-badge)
 ## Info
 This is a <NWAPI / PluginAPI> plugin that allows for the facility to have a "Door Software Restart".
 The plugin closes(must be configured in config) and full locks all doors for the configurated time and then unlocks them again.
