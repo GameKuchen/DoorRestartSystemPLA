@@ -1,4 +1,4 @@
-﻿## Door-Restart-System 3.5
+﻿## Door-Restart-System v1.0.0
 ![GitHub release (latest by date)](https://img.shields.io/github/downloads/gamekuchen/DoorRestartSystemPLA/v1.0.0/total?style=for-the-badge)
 ## Info
 This is a <NWAPI / PluginAPI> plugin that allows for the facility to have a "Door Software Restart".
