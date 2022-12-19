@@ -45,7 +45,6 @@ namespace DoorRestartSystemPLA
             yield return Timing.WaitForSeconds((float) Random.NextDouble() * (Config.DelayMax - Config.DelayMin) + Config.DelayMin);
             for (;;)
             {
-                Log.Debug("Announcement Incoming...");
                 yield return Timing.WaitUntilTrue(() => !(Warhead.IsDetonated || Warhead.IsDetonationInProgress));
                 Cassie.Message(Config.DoorSentence);
 
@@ -58,8 +57,6 @@ namespace DoorRestartSystemPLA
                 }
 
                 var doorOutDur = (float) (Random.NextDouble() * (Config.DurationMax - Config.DurationMin) + Config.DurationMin);
-                Log.Debug("calculated doorOutageDuration " + doorOutDur);
-                Log.Debug("Variables Defined...");    
                 foreach (var door in DoorVariant.AllDoors.Where(door => !IsNuke(door)))
                 {
                     if (Config.CloseDoors)
@@ -69,12 +66,9 @@ namespace DoorRestartSystemPLA
                     }
                     door.ServerChangeLock(DoorLockReason.SpecialDoorFeature, true);
                 }
-                Log.Debug("Waiting DoorOutageDuration");
                 yield return Timing.WaitForSeconds(doorOutDur);
-                Log.Debug("Waited DoorOutageDuration");
                 foreach (var door in DoorVariant.AllDoors.Where(door => !IsNuke(door)))
                 {
-                    Log.Debug("Unlocking Doors...");
                     door.ServerChangeLock(DoorLockReason.SpecialDoorFeature, false);
                 }
                 Cassie.Message(Config.DoorAfterSentence);
@@ -86,12 +80,9 @@ namespace DoorRestartSystemPLA
 
         private static bool IsNuke(DoorVariant doorVariant)
         {
-            Log.Debug("Checking if isNuke!");
             var nameTag = doorVariant.TryGetComponent(out DoorNametagExtension name) ? name.GetName : null;
             if (nameTag == null) return false;
-            Log.Debug("NameTag " + nameTag, true);
             var bracketStart = nameTag.IndexOf('(') - 1;
-            Log.Debug("Lel");
             if (bracketStart > 0)
                 nameTag = nameTag.Remove(bracketStart, nameTag.Length - bracketStart);
             return nameTag == "SURFACE_NUKE";
