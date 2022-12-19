@@ -32,3 +32,7 @@ Rumors say that these "glitches" happen because someone spilled their coffee on 
   door_after_sentence: DOOR CONTROL SYSTEM REPAIR COMPLETE```
   #Should doors close during lockdown (NOTE: This will effect 914 machine doors, use with caution!)
   closedoors = false;
+
+## AD for Morale:
+This plugins test servers were sponsored by Site61. A german SCP:SL and other game server network.
+Join their discord [here](https://discord.gg/dwsTa9np4A)
