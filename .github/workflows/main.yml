@@ -28,7 +28,7 @@ jobs:
           cp dependencies.zip ./bin/Release/
           7z a -tzip dependencies.zip ./bin/Release/*.dll
       - name: Install GitHub Actions for GitHub Releases
-        uses: actions/github-release-v1@v1
+        uses: softprops/action-gh-release@v1
       - name: Create Release
         id: create_release
         uses: actions/github-release-v1@v1
