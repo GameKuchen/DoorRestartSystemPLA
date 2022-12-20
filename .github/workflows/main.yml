@@ -31,14 +31,14 @@ jobs:
         uses: softprops/action-gh-release@v1
       - name: Create Release
         id: create_release
-        uses: actions/github-release-v1@v1
+        uses: softprops/action-gh-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
           body: ${{ github.event.head_commit.message }}
-          draft: false
+          draft: true
           prerelease: false
       - name: Upload DLL
         uses: actions/upload-release-asset@v1
@@ -46,7 +46,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./bin/Release/*.dll
+          files: ./bin/Release/*.dll
           asset_name: DoorRestartSystem${{ github.ref }}.dll
           asset_content_type: application/vnd.microsoft.portable-executable
       - name: Upload dependencies ZIP
