@@ -25,8 +25,8 @@ jobs:
           dotnet build --configuration Release --output ./bin/Release
       - name: Zip DLL and dependencies
         run: |
-          cp dependencies.zip ./bin/Release/
-          7z a -tzip dependencies.zip ./bin/Release/*.dll
+          cp dependenciesdrs.zip ./bin/Release/
+          7z a -tzip dependenciesdrs.zip ./bin/Release/*.dll
       - name: Install GitHub Actions for GitHub Releases
         uses: softprops/action-gh-release@v1
       - name: Create Release
