@@ -12,7 +12,7 @@ jobs:
       - name: Check out dependencies repository
         uses: actions/checkout@v2
         with:
-          repository: my-dependencies-repo
+          repository: gamekuchen/dependencies
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Install .NET Core SDK
         uses: actions/setup-dotnet@v1
