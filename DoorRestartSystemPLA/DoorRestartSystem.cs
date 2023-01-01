@@ -85,7 +85,8 @@ namespace DoorRestartSystemPLA
             var bracketStart = nameTag.IndexOf('(') - 1;
             if (bracketStart > 0)
                 nameTag = nameTag.Remove(bracketStart, nameTag.Length - bracketStart);
-            return nameTag == "SURFACE_NUKE";
+            return nameTag == "SURFACE_NUKE" || nameTag == "079_FIRST" || nameTag == "079_SECOND";
+            
         }
         [PluginConfig]
         public Config Config;
