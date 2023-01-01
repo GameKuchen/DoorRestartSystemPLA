@@ -20,7 +20,7 @@ namespace DoorRestartSystemPLA
         public Random Random { get; } = new Random();
         private static bool _timerOn = true;
         [PluginPriority(LoadPriority.High)]
-        [PluginEntryPoint("DoorRestartSystem", "1.0.0", "Event for doors.", "GameKuchen")]
+        [PluginEntryPoint("DoorRestartSystem", "1.0.1", "Event for doors.", "GameKuchen")]
         void LoadPlugin()
         {
             Log.Info("DoorRestartSystem Starting...");
